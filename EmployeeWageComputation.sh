@@ -1,24 +1,18 @@
 #! /bin/bash -x
 
 echo " welcome to EmployeeWageComputation"
-isPresentFullTime=1
-isPresentPartTime=2
-wagePerHr=20
+IS_PRESENT=1
+EMP_RATE_PER_HR=20
+empCheck=$((RANDOM%2))
+if [ $empCheck -eq $IS_PRESENT ]
+then
+        empHrs=8
+        salary=$(( empHrs * EMP_RATE_PER_HR ))
+else
+        salary=0
+fi
 
-employeeCheck=$((RANDOM%3))
 
-case $employeeCheck in
-	$isPresentFullTime )
-			empHrs=8;;
-	$isPresentPartTime )
-			empHrs=4;;
-	*)
-			empHrs=0;;
-
-esac
-
-salary=$((empHrs*wagePerHr))
-echo "The salary is $salary"
 
 
 
