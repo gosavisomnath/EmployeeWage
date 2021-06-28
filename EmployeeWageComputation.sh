@@ -1,9 +1,13 @@
 #! /bin/bash -x
 
 echo " welcome to EmployeeWageComputation"
-if [ $((RANDOM%2)) -eq 0 ]
+IS_PRESENT=1
+EMP_RATE_PER_HR=20
+empCheck=$((RANDOM%2))
+if [ $empCheck -eq $IS_PRESENT ]
 then
-        echo "present"
+        empHrs=8
+        salary=$(( empHrs * EMP_RATE_PER_HR ))
 else
-        echo "not present"
+        salary=0
 fi
